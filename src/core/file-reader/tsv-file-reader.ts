@@ -6,8 +6,7 @@ const CHUNK_SIZE = 16384; // 16KB
 
 export default class TSVFileReader
   extends EventEmitter
-  implements FileReaderInterface
-{
+  implements FileReaderInterface {
   constructor(public filename: string) {
     super();
   }
