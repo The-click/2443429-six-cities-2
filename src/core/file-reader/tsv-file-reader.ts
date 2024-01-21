@@ -1,76 +1,39 @@
-import { FileReader } from './file-reader.interface.js';
-import { readFileSync } from 'node:fs';
-import {
-  CityType,
-  ComfortType,
-  HouseType,
-  Offer,
-  UserType,
-} from '../../types/index.js';
+import EventEmitter from 'node:events';
+import { createReadStream } from 'node:fs';
+import { FileReaderInterface } from './file-reader.interface.js';
 
-export class TSVFileReader implements FileReader {
-  private rawData = '';
+const CHUNK_SIZE = 16384; // 16KB
 
-  constructor(private readonly filename: string) {}
-
-  public read(): void {
-    this.rawData = readFileSync(this.filename, { encoding: 'utf-8' });
+export default class TSVFileReader
+  extends EventEmitter
+  implements FileReaderInterface
+{
+  constructor(public filename: string) {
+    super();
   }
 
-  public toArray(): Offer[] {
-    if (!this.rawData) {
-      throw new Error('File was not read');
+  public async read(): Promise<void> {
+    const stream = createReadStream(this.filename, {
+      highWaterMark: CHUNK_SIZE,
+      encoding: 'utf-8',
+    });
+
+    let remainingData = '';
+    let nextLinePosition = -1;
+    let importedRowCount = 0;
+
+    for await (const chunk of stream) {
+      remainingData += chunk.toString();
+
+      while ((nextLinePosition = remainingData.indexOf('\n')) >= 0) {
+        const completeRow = remainingData.slice(0, nextLinePosition + 1);
+        remainingData = remainingData.slice(++nextLinePosition);
+        importedRowCount++;
+
+        this.emit('line', completeRow);
+      }
     }
 
-    return this.rawData
-      .split('\n')
-      .filter((row) => row.trim().length > 0)
-      .map((line) => line.split('\t'))
-      .map(
-        ([
-          title,
-          description,
-          postDate,
-          city,
-          prevImage,
-          images,
-          premium,
-          favorites,
-          rating,
-          houseType,
-          roomCount,
-          guestCount,
-          price,
-          comfort,
-          author,
-          coordinate,
-        ]) => ({
-          title,
-          description,
-          postDate: new Date(postDate),
-          city: city as CityType,
-          prevImage,
-          images: images.split(' '),
-          premium: premium.toLowerCase() === 'true',
-          favorites: favorites.toLowerCase() === 'true',
-          rating: Number(rating),
-          houseType: houseType as HouseType,
-          roomCount: Number(roomCount),
-          guestCount: Number(guestCount),
-          price: Number(price),
-          comfort: comfort as ComfortType,
-          author: {
-            username: author.split(' ')[0],
-            email: author.split(' ')[1],
-            password: author.split(' ')[2],
-            type: author.split(' ')[3] as UserType,
-          },
-          coordinate: {
-            latitude: Number(coordinate.split(' ')[0]),
-            longitude: Number(coordinate.split(' ')[1]),
-          },
-          commentCount: 0,
-        })
-      );
+    this.emit('end', importedRowCount);
   }
 }
