@@ -1,0 +1,88 @@
+{
+  "api": {
+    "city": [
+      "Paris",
+      "Cologne",
+      "Brussels",
+      "Amsterdam",
+      "Hamburg",
+      "Dusseldorf"
+    ],
+    "titles": [
+      "Тёмная башня",
+      "Стрелок",
+      "Извлечение троих",
+      "Куджо",
+      "Глаза дракона",
+      "Зелёная миля",
+      "Кристина",
+      "Жребий Салема",
+      "Бегущий человек",
+      "История Лизи",
+      "Долгая прогулка",
+      "Институт",
+      "Худеющий",
+      "Гвенди и её волшебная шкатулка",
+      "Мобильник",
+      "Черновик",
+      "Ночной Дозор",
+      "Крёстный Отец",
+      "Атлант расправил плечи"
+    ],
+    "descriptions": [
+      "Страшный рассказ о драконе. Колдовство, предательство и необыкновенный мир фэнтези.",
+      "История про вампиров из маленького городка. Коварство, нестандартный сюжет и необыкновенные приключения священника.",
+      "Идти или остановиться? Вопрос без правильного ответа. Рассказ о долгой и смертельной прогулке.",
+      "Как похудеть и не сойти с ума? А как вернуть вес обратно? Необычная история противостояния.",
+      "Прими звонок и превратись в зомби. Рассказ о зомбировании через средства связи.",
+      "Виновен или нет? Какая разница. Исход один. Сверхспособности не помогут.",
+      "И у машин есть душа. Хорошо ли это? Мистический рассказ про автомобиль.",
+      "Криминальная сага от неповторимого Марио Пьюзо. Перестрелки, погони, предательство и дружба.",
+      "Мир населяют не только люди. Иные живут вместе с ними и визуально ничем не отличаются. История про магию и могущественных существ. Борьба сил Добра и Зла."
+    ],
+    "prevImage": [
+      "https://pro-dachnikov.com/uploads/posts/2021-10/1633917103_17-p-dom-mechti-risunki-foto-19.jpg",
+      "https://img.razrisyika.ru/kart/74/295874-dom-moey-mechty-1.jpg",
+      "https://mykaleidoscope.ru/x/uploads/posts/2023-03/1679951801_mykaleidoscope-ru-p-bolshoi-chastnii-dom-instagram-31.jpg",
+      "https://w.forfun.com/fetch/87/8729152b232826cf8800653d2aaa073d.jpeg",
+      "https://img3.fonwall.ru/o/dg/lawn-villa-mansion-house-xebp.jpeg?auto=compress&amp;fit=resize&amp;w=500&amp;display=thumb",
+      "https://klike.net/uploads/posts/2023-02/1675409531_3-13.jpg"
+    ],
+    "images": [
+      "https://klike.net/uploads/posts/2023-02/1675409531_3-13.jpg",
+      "https://klike.net/uploads/posts/2023-02/1675409531_3-13.jpg https://w.forfun.com/fetch/87/8729152b232826cf8800653d2aaa073d.jpeg",
+      "https://mykaleidoscope.ru/x/uploads/posts/2023-03/1679951801_mykaleidoscope-ru-p-bolshoi-chastnii-dom-instagram-31.jpg https://pro-dachnikov.com/uploads/posts/2021-10/1633917103_17-p-dom-mechti-risunki-foto-19.jpg https://klike.net/uploads/posts/2023-02/1675409531_3-13.jpg",
+      "https://pro-dachnikov.com/uploads/posts/2021-10/1633917103_17-p-dom-mechti-risunki-foto-19.jpg https://img.razrisyika.ru/kart/74/295874-dom-moey-mechty-1.jpg https://mykaleidoscope.ru/x/uploads/posts/2023-03/1679951801_mykaleidoscope-ru-p-bolshoi-chastnii-dom-instagram-31.jpg https://img3.fonwall.ru/o/dg/lawn-villa-mansion-house-xebp.jpeg?auto=compress&amp;fit=resize&amp;w=500&amp;display=thumb"
+    ],
+    "houseType": ["apartament", "house", "room", "hotel"],
+    "comfort": [
+      "Breakfast",
+      "Air conditioning",
+      "Laptop friendly workspace",
+      "Baby seat",
+      "Washer",
+      "Towels",
+      "Fridge"
+    ],
+    "users": [
+      "ivan ivan@city.com 123ivan pro",
+      "oleg oleg@city.com 123oleg pro",
+      "pier pier@city.com 123pier ordinary",
+      "roland roland@city.com 123roland pro",
+      "holi holi@city.com 123holi ordinary",
+      "jack jack@city.com 123jack ordinary",
+      "anton anton@city.com 123anton ordinary",
+      "boris boris@city.com 123boris pro",
+      "rokki rokki@city.com 123rokki ordinary",
+      "john john@city.com 123john pro"
+    ],
+    "coordinate": [
+      "48.85661 2.351499",
+      "50.938361 6.959974",
+      "50.846557 4.351697",
+      "52.370216 4.895168",
+      "53.550341 10.000654",
+      "51.225402 6.776314"
+    ]
+  }
+}
